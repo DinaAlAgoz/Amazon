@@ -53,10 +53,16 @@ function Checkout() {
                 }
                
             </div>
-            <div className='checkoutright'>
-                <Subtotal/>
-                
-            </div>
+            {
+                basket.length > 0 && (
+                   
+                    <div className='checkoutright'>
+                    <Subtotal/>
+                    
+                </div>
+                )
+            }
+          
         </div>
     )
 }
