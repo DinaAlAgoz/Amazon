@@ -17,7 +17,7 @@ function Header(){
       
         <nav className='header' >
           
-            <img className='header-logo' alt='logo' src='amazon.png'/>
+            <img className='header-logo' alt='logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'/>
             <div className='header-search' >
                 <input type='text' className='header-inputsearch' />
                 <SearchIcon className='header-searchIcon' />

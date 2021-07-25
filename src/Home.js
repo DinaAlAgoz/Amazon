@@ -9,7 +9,7 @@ function Home() {
      <div className="container">
      <div className='home' >
          <img alt='text' className='homeImage'
-          src="https://m.media-amazon.com/images/S/sonata-images-prod/null/84abb678-22dc-43c9-aefb-fa921c9e7a52._UR3000,600_SX1500_FMjpg_.jpeg"/>
+          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"/>
 
         <div className='home-row'>
             <Product
