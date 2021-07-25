@@ -1,14 +1,20 @@
-import React from 'react'
-import SearchIcon from '@material-ui/icons/Search'
-import './header.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import SearchIcon from '@material-ui/icons/Search';
+import './header.css';
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from 'react-router-dom';
+import { useStateValue } from "./StateProvider";
+import { SportsBasketball } from '@material-ui/icons';
 
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 
 function Header(){
+   
+  const [{basket}, dispatch] = useStateValue();
+
+   console.log( "My Basket" ,basket);
 
     return(
-
+      
         <nav className='header' >
           
             <img className='header-logo' alt='logo' src='amazon.png'/>
@@ -35,23 +41,17 @@ function Header(){
 
 
               {/*3st link  */}
-        <Link to ='/' className='header-link'>
-            <div className ='header-option'>
-                <span className='header-option-one'> Yours </span>
-                <span className='header-option-two'> Prime </span>
-
-             </div>
-            </Link>
+       
 
             </div>
              {/*Basket icon number */}
             <Link to ='/checkout' className='header-link'>
                 <div className='header-optionbasket'>
-                   <ShoppingBasketIcon />
+                <ShoppingBasketIcon />
 
                  {/* number of items in the basket */}
-                 <span className='header-option-two header-basketCount'>2</span>
-
+                 <span className='header-option-two header-productCount'>{basket.length}</span>
+               
                 </div>
             </Link>
         </nav>

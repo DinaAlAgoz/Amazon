@@ -1,9 +1,38 @@
 import React from 'react'
 import './login.css';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import {auth} from './firebase'
+import { useState } from 'react';
 
 
 function Login() {
+    const history = useHistory();   
+    const [useremail , setUserEmail] = useState('')
+    const [userpassword , setUserpasword] = useState('')
+
+    const loginUser = event => {
+
+        event.preventDefault();
+        auth.signInWithEmailAndPassword(useremail,userpassword)
+        .then ((auth) => {
+            history.push('/')
+        })
+        .catch(e => alert(e.message))
+    }
+
+
+    const signupuser = event => {
+        event.preventDefault()
+        auth.createUserWithEmailAndPassword(useremail,userpassword)
+        .then(auth => {
+            history.push('/');
+
+        })
+        .catch(e => alert(e.message))
+    }
+
+
+
 
     return(
         <div className='login'>
@@ -17,17 +46,20 @@ function Login() {
                <form>
                    <h5>E-mail</h5>
                    
-                   <input type='email' />
+                   <input value={useremail} onChange={event => setUserEmail(event.target.value)} type='email' />
                    <h5>Password</h5>
-                   <input type='password'/ >
-                       <button type='submit' className ='loginsignINButton' >Sign In</button>
+                   <input value={userpassword} onChange ={event => setUserpasword(event.target.value)} type='password'/ >
+                       <button onClick={loginUser}   type='submit' className ='loginsignINButton' >Sign In</button>
                </form>
 
                <p>By Siging-in, you agree to Amazon's Terms and Conditions</p>
-               <button className='loginRegisterButton'>Create Your Amazon Account</button>
+               <button  onClick={signupuser}  className='loginRegisterButton'>Create Your Amazon Account</button>
            </div>
         </div>
     )
+
+
+   
 
 }
 

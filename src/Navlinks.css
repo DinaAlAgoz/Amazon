@@ -1,0 +1,44 @@
+
+
+
+.navlinks {
+
+    background-color: #232f3e;
+    color: white;
+    height: 39px;
+}
+
+
+.navlinksouter {
+
+  width: 70%;
+  margin: auto;
+  padding: 6px;
+  color: white;
+
+}
+
+.navlinksouter a {
+
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #232f3e;
+    margin-right: 10px;
+
+}
+
+
+.navlinksouter a:hover {
+
+    border: 1px solid white;
+    border-radius: 4px;
+
+}
+
+.navlinksinner {
+
+    margin-top: 5px;
+}
