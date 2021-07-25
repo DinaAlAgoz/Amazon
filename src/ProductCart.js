@@ -22,18 +22,17 @@ function ProductCart({id,tittle,image,price,rating}) {
       <div className ="productCart">
           <img className="productCartImage" src = {image} alt =""/>
           <div className ="productInfo">
-              <p>{tittle}</p>
-              <p> ${price}</p>
-          </div>
-          <div>
+              <p className ="productCrattittle">{tittle}</p>
+              <p className ="productPrice"> ${price}</p>
+       
+          <div className="paroductcartRating">
       {
         
 
         Array(rating)
         .fill()
         .map((_) => (
-
-            <p>*</p>
+            <span>*</span>
         ))
 
       }
@@ -41,6 +40,8 @@ function ProductCart({id,tittle,image,price,rating}) {
       </div>
       <button onClick ={removeitem}>Remove From the Cart</button>
       </div>
+      </div>
+      
 
   )
 
