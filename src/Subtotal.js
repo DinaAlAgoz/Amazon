@@ -1,8 +1,7 @@
 
 
-
-
 import React from 'react'
+import './Suntotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from './StateProvider'
 
@@ -33,7 +32,7 @@ function Subtotal(){
             prefix={'$'}
         
             />
-           <button>Proceed to Checkout</button>
+           <button className ="checkoutbutton">Proceed to Checkout</button>
 
         </div>
 

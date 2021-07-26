@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './login.css';
 import { Link, useHistory } from 'react-router-dom'
 import {auth} from './firebase'
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useStateValue } from './StateProvider';
 
 
 function Login() {
     const history = useHistory();   
     const [useremail , setUserEmail] = useState('')
     const [userpassword , setUserpasword] = useState('')
+    const [{loggedinuser, basket}, dispatch] = useStateValue();
 
+    useEffect(()=>{
+    window.localStorage.setItem('userlogin' , loggedinuser)  
+    console.log(userpassword) 
+    },[])
     const loginUser = event => {
 
         event.preventDefault();
