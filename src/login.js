@@ -12,10 +12,7 @@ function Login() {
     const [userpassword , setUserpasword] = useState('')
     const [{loggedinuser, basket}, dispatch] = useStateValue();
 
-    useEffect(()=>{
-    window.localStorage.setItem('userlogin' , loggedinuser)  
-    console.log(userpassword) 
-    },[])
+    
     const loginUser = event => {
 
         event.preventDefault();

@@ -17,16 +17,18 @@ function App() {
 
  const [{loggedinuser}, dispatch] = useStateValue();
 
+ let counter =0;
   useEffect(() =>{
 
      const  unsubsribe = auth.onAuthStateChanged((userauth) => {
-      if (userauth){
-        dispatch ({
+       if (userauth){
+         dispatch ({
           type: 'SET_LOGIN',
           user: userauth
         })
 
       }else {
+
         dispatch({
           type: 'SET_LOGIN',
           user: null

@@ -25,6 +25,7 @@ function Header(){
   useEffect(()=>{
     console.log(loggedinuser)
     console.log(basket)
+    window.localStorage.setItem('userlogin' , loggedinuser)  
   },[])
 
     return(
@@ -40,8 +41,8 @@ function Header(){
             {/*1st link  */}
          <Link to ={!loggedinuser && "/login"} className='header-link'>
             <div onClick={logoutUser} className ='header-option'>
-               <span className='header-option-one'> Hello,{/*loggedinuser.email*/}</span>
-                {/* <span className='header-option-two'> {loggedinuser? 'Signout':'Sign In'} </span> */}
+               <span className='header-option-one'> SignIn  {loggedinuser ? loggedinuser.email: null}</span>
+                <span className='header-option-two'> {loggedinuser? 'Signout':'Sign In'} </span>
              </div>
             </Link>
 

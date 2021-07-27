@@ -3,7 +3,7 @@
 export const initialState = {
     basket: [],
 
-    loggedinuser:null
+    loggedinuser:'dina'
 }
 
 
@@ -16,15 +16,11 @@ const reducer = (state,action) => {
                 ...state,
                 basket:[...state.basket , action.item],
             };
-         case 'SET_LOGIN':
-             
+         case "SET_LOGIN":
          return {
              ...state,
              loggedinuser: action.user
-
-         }
-
-       
+         } 
         case 'REMOVE FROM THE CART':
             let newcart = [...state.basket]
             const index = state.basket.findIndex((basketItem) => basketItem.id === action.id)
